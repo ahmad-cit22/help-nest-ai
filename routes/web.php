@@ -7,5 +7,6 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return view('users.index');
+    $users = \App\Models\User::all();
+    return $users;
 });
