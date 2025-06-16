@@ -12,6 +12,6 @@ class Knowledgebase extends Model
     use HasFactory;
 
     protected $casts = [
-        'embedding' => Vector::class
+        'embedding' => Vector::class,
     ];
 }

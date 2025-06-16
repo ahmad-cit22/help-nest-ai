@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Knowledgebase;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -16,10 +17,7 @@ class KnowledgebaseCreated
     /**
      * Create a new event instance.
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(public Knowledgebase $knowledgebase) {}
 
     /**
      * Get the channels the event should broadcast on.
