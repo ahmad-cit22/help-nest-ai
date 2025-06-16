@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Model::automaticallyEagerLoadRelationships();
-//        Event::listen(KnowledgebaseCreated::class, KnowledgebaseCreatedListener::class);
+        //        Event::listen(KnowledgebaseCreated::class, [KnowledgebaseCreatedListener::class, 'handle']);
     }
 }

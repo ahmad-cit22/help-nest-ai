@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\KnowledgebaseCreated;
+use Illuminate\Support\Facades\Log;
 
 class KnowledgebaseCreatedListener
 {
@@ -17,8 +18,10 @@ class KnowledgebaseCreatedListener
     /**
      * Handle the event.
      */
-    public function handle(KnowledgebaseCreated $event): void
+    public function handle(KnowledgebaseCreated $data): void
     {
-        //
+        $knowledgebase = $data->knowledgebase;
+
+        Log::info('New knowledgebase created: #' . $knowledgebase->id . ' - ' . $knowledgebase->title);
     }
 }
