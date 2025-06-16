@@ -8,5 +8,6 @@ Route::get('/', function () {
 
 Route::get('/users', function () {
     $users = \App\Models\User::all();
+
     return $users;
 });
