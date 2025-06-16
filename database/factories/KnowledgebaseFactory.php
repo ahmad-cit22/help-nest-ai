@@ -18,7 +18,15 @@ class KnowledgebaseFactory extends Factory
     public function definition(): array
     {
         return [
-//
+            'title' => $this->faker->sentence(),
+            'content' => $this->faker->paragraphs(3, true),
+            'embedding' => [
+                $this->faker->randomFloat(5, -1, 1),
+                $this->faker->randomFloat(5, -1, 1),
+                $this->faker->randomFloat(5, -1, 1),
+            ],
+            'is_published' => $this->faker->boolean(),
+            'created_by' => User::factory(),
         ];
     }
 }
