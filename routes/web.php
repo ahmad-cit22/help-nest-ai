@@ -17,10 +17,12 @@ Route::get('/create-kb', function () {
         'title' => 'Test KB',
         'content' => 'Test KB content',
         'embedding' => [0.1, 0.2, 0.3],
-        'created_by' => \App\Models\User::factory()->id
+        'created_by' => 1,
     ]);
 
     \App\Events\KnowledgebaseCreated::dispatch($knowledgebase);
 
-    return 'OK';
+    //    event(new \App\Events\KnowledgebaseCreated($knowledgebase));
+
+    return 'OK2';
 });

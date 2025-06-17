@@ -3,9 +3,10 @@
 namespace App\Listeners;
 
 use App\Events\KnowledgebaseCreated;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Log;
 
-class KnowledgebaseCreatedListener
+class KnowledgebaseCreatedListener implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -22,6 +23,8 @@ class KnowledgebaseCreatedListener
     {
         $knowledgebase = $data->knowledgebase;
 
-        Log::info('New knowledgebase created: #' . $knowledgebase->id . ' - ' . $knowledgebase->title);
+        sleep(5);
+
+        Log::info('New knowledgebase created: #'.$knowledgebase->id.' - '.$knowledgebase->title);
     }
 }
